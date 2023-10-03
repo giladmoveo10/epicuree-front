@@ -1,18 +1,14 @@
 import "./Header.scss";
-// import MenuButton from "./components/MenuButton/MenuButton";
-// import LogoHeader from "./components/Logo/LogoHeader";
-// import IconsGroup from "./components/IconsGroup/IconsGroup";
+import MenuButton from "./Components/MenuButton/MenuButton";
+import LogoHeader from "./Components/Logo/LogoHeader";
+import IconsGroup from "./Components/IconsGroup/IconsGroup";
 
 const Header = () => {
-    // const handleMenuClick = () => {
-    //     console.log("Menu button clicked");
-    // };
-
     return (
         <header className="header">
-            {/* <MenuButton onMenuClick={handleMenuClick}></MenuButton> */}
-            {/* <LogoHeader></LogoHeader>
-            <IconsGroup></IconsGroup> */}
+            <MenuButton />
+            <LogoHeader />
+            <IconsGroup />
         </header>
     );
 };

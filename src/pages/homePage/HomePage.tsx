@@ -4,8 +4,8 @@ import Header from "../../shared/components/Header/Header";
 const Home = () => {
     return (
         <div>
-            <h1>asd</h1>
             <Header />
+            <h1>asd</h1>
         </div>
     );
 };
