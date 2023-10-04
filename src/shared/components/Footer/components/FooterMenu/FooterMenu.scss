@@ -8,6 +8,10 @@
     align-items: flex-start;
     padding: 20px;
 
+    @media (min-width: $desktop-breakpoint) {
+        align-items: center;
+    }
+
     .menu-item {
         font-family: $font-family;
         color: $color-primary-black;
@@ -23,5 +27,12 @@
         display: flex;
         flex-direction: column;
         gap: 30px; // Adjust the gap value as desired
+
+        @media (min-width: $desktop-breakpoint) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
     }
 }
