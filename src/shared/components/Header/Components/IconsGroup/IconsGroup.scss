@@ -1,0 +1,9 @@
+.icon-group {
+    display: flex;
+    // justify-content: space-between;
+    gap: 20px;
+    flex-shrink: 0;
+    padding-right: 13px;
+    position: fixed;
+    right: 0;
+}

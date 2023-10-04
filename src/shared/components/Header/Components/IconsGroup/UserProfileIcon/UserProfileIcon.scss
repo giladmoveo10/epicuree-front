@@ -1,0 +1,8 @@
+@import "../../../../../../styles/utilities/variables.scss";
+
+.user-profile-icon {
+    img {
+        width: $header-icon-width;
+        height: $header-icon-height;
+    }
+}

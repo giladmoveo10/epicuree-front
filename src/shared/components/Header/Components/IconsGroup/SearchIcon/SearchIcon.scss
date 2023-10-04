@@ -1,0 +1,8 @@
+@import "../../../../../../../src/styles/utilities/variables.scss";
+
+.search-icon {
+    img {
+        width: $header-icon-width;
+        height: $header-icon-height;
+    }
+}
