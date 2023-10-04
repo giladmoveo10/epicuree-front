@@ -1,0 +1,7 @@
+@import "../../styles/utilities/mixins.scss";
+
+.homePage {
+    // @include center-content;
+    display: flex;
+    flex-direction: column;
+}

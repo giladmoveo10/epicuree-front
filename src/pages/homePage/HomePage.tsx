@@ -1,11 +1,14 @@
-import React from "react";
+import "./HomePage.scss";
 import Header from "../../shared/components/Header/Header";
+import Footer from "../../shared/components/Footer/Footer";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 const Home = () => {
     return (
-        <div>
+        <div className="homePage">
             <Header />
-            <h1>asd</h1>
+            <AboutUs />
+            <Footer />
         </div>
     );
 };

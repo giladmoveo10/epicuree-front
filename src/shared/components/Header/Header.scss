@@ -1,6 +1,7 @@
+@import "../../../styles/utilities/mixins.scss";
+
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-content(row);
     padding-top: 24px;
+    margin-bottom: 24px;
 }
