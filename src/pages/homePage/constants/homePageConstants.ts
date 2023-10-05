@@ -5,7 +5,8 @@ turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit 
 dignissim a vestibulum.`;
 const aboutUsText2 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 In a lacus vel justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.`;
+const desktopBreakpoint = 768;
 
-const homePageConstants = { aboutUsText, aboutUsText2 };
+const homePageConstants = { aboutUsText, aboutUsText2, desktopBreakpoint };
 
 export default homePageConstants;

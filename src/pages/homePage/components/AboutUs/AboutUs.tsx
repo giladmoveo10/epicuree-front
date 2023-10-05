@@ -3,7 +3,7 @@ import AboutLogo from "../../../../assets/images/about-logo.svg";
 import AppStore from "../../../../assets/images/App-Store.png";
 import GooglePlay from "../../../../assets/images/Google-Play.png";
 
-import homePageConstants from "../../../../shared/constants/homePageConstants";
+import homePageConstants from "../../constants/homePageConstants";
 
 function AboutUs() {
     return (

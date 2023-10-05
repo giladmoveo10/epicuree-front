@@ -9,6 +9,10 @@
     background-color: $color-secondary-bright;
     padding: 0px 11px;
 
+    // @media (min-width: 767px) {
+    //     display: none;
+    // }
+
     .epicure-logo {
         width: 102px;
         height: 95px;
