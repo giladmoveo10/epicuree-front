@@ -1,0 +1,35 @@
+// @import "../../../../assets/scss/variables.scss";
+
+.intro-search {
+    position: relative;
+    width: auto;
+    height: auto;
+    // background-image: url("../../../../assets/images/yami.png");
+
+    .background-image {
+        width: 468px;
+        height: 273px;
+        background-repeat: no-repeat;
+        display: block;
+
+        @media (min-width: 768px) {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .content-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); // Centers the box
+        width: auto;
+        height: auto;
+
+        .description-box {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
