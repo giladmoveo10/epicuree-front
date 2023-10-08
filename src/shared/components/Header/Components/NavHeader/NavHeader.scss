@@ -1,14 +1,9 @@
 @import "src/styles/utilities/variables.scss";
 @import "src/styles/utilities/colors.scss";
-// mobile - column
-// desktop - row
 
 .nav {
     display: flex;
-    // flex-direction: column;
-    // gap: 20px; // ! should be like the gap in the footer
 
-    // styles like in the footer. -> create a mixin
     @media (min-width: $desktop-breakpoint) {
         flex-direction: row;
         gap: 20px;

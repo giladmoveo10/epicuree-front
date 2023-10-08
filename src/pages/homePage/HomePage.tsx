@@ -4,6 +4,7 @@ import Footer from "../../shared/components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
 
+
 const Home = () => {
     return (
         <div className="homePage">
