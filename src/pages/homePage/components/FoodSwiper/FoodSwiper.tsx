@@ -5,7 +5,7 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/scss";
 import "swiper/scss/pagination";
-import 'swiper/scss/navigation';
+import "swiper/scss/navigation";
 
 const FoodSwiper: React.FC = () => {
     // isDesktop is used to determine the number of slides per view
@@ -14,10 +14,17 @@ const FoodSwiper: React.FC = () => {
     return (
         <Swiper
             slidesPerView={"auto"}
-            spaceBetween={10}
+            spaceBetween={20}
             // pagination={{
             //     clickable: true,
             // }} // dots below the swipers
+
+            breakpoints={{
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            }}
             modules={[Pagination]}
             className="mySwiper"
         >

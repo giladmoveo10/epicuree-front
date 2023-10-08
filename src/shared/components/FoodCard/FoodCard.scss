@@ -1,5 +1,5 @@
 @import "../../../styles/utilities/mixins.scss";
-// @import "../../../styles/base/typography.scss";
+@import "../../../styles/utilities/variables.scss";
 
 .food-card {
     display: flex;
@@ -7,7 +7,7 @@
     align-items: flex-start;
     border: 2px solid #f70000; // ! remove it later -> just for testing
     margin: 20px 0;
-    width: 245px;
+    width: $card-width;
 
     .dish-image {
         width: 100%;
