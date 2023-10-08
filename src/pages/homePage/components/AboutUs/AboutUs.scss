@@ -9,6 +9,7 @@
     align-items: flex-start;
     background-color: $color-secondary-bright;
     padding: 0px 11px;
+    width: auto;
 
     @media (min-width: $desktop-breakpoint) {
         flex-direction: row-reverse;
