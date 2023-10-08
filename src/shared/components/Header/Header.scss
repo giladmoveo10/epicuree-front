@@ -1,7 +1,6 @@
 @import "../../../styles/utilities/mixins.scss";
 @import "src/styles/utilities/variables.scss";
 .header {
-    // @include center-content(row);
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -19,6 +18,5 @@
 
     @media (min-width: $desktop-breakpoint) {
         padding-top: 20px;
-        // justify-content: none;
     }
 }

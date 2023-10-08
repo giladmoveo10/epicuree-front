@@ -3,9 +3,6 @@ import Header from "../../shared/components/Header/Header";
 import Footer from "../../shared/components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
-// import homePageConstants from "./constants/homePageConstants";
-
-// import { useMediaQuery } from "react-responsive";
 
 const Home = () => {
     return (
