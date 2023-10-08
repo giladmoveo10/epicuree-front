@@ -1,20 +1,25 @@
-import DishProps from "../../interfaces/DishProps";
+import SwiperItem from "../../interfaces/SwiperItem";
 import "./FoodCard.scss";
 
-const FoodCard: React.FC<DishProps> = ({ dish }) => {
+interface FoodCardProps {
+    item: SwiperItem;
+}
+
+const FoodCard: React.FC<FoodCardProps> = ({item}) => {
     return (
         <div className="food-card">
-            <img src={dish.pic} alt={dish.title} className="dish-image" />
+            <img src={item.pic} alt={item.title} className="dish-image" />
             <div className="card-info">
-                <h3 className="dish-title">{dish.title}</h3>
-                {dish.chefName && <h3 className="chef-name">{dish.chefName}</h3>}
+                <h3 className="dish-title">{item.title}</h3>
+                {item.chefName && <h3 className="chef-name">{item.chefName}</h3>}
+                {item.restaurantName && <h3 className="dish-title">{item.restaurantName}</h3>}
                 <div className="description">
-                    {dish.ingredients && <span className="body-text">{dish.ingredients}</span>}
-                    {dish.descriptionPic && (
-                        <img src={dish.descriptionPic} alt="Description" className="description-pic" />
+                    {item.ingredients && <span className="body-text">{item.ingredients}</span>}
+                    {item.descriptionPic && (
+                        <img src={item.descriptionPic} alt="Description" className="description-pic" />
                     )}
-                    {dish.price && <h2 className="price">{dish.price}</h2>}
-                    {dish.rating && <span className="rating">{dish.rating}</span>}
+                    {item.price && <h2 className="price">{item.price}</h2>}
+                    {item.rating && <span className="rating">{item.rating}</span>}
                     {/* maybe add !== undefined before && */}
                 </div>
             </div>
