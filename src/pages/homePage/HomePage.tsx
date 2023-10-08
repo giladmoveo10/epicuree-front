@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
 import FoodSwiper from "./components/FoodSwiper/FoodSwiper";
 
+
 const Home = () => {
     return (
         <div className="homePage">
