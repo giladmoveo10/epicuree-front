@@ -3,9 +3,7 @@ import Header from "../../shared/components/Header/Header";
 import Footer from "../../shared/components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
-// import homePageConstants from "./constants/homePageConstants";
-
-// import { useMediaQuery } from "react-responsive";
+import FoodSwiper from "./components/FoodSwiper/FoodSwiper";
 
 const Home = () => {
     return (
@@ -13,6 +11,9 @@ const Home = () => {
             <Header />
             <IntroSearch />
             <div className="home-page-content">
+                <div className="dish-list">
+                    <FoodSwiper />
+                </div>
                 <AboutUs />
             </div>
             <Footer />
