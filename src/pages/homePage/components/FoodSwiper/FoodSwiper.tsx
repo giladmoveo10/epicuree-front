@@ -1,13 +1,13 @@
-import { dishes } from "../../../../assets/mockdata/signature";
 import FoodCard from "../../../../shared/components/FoodCard/FoodCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+// import { Pagination } from "swiper/modules";
 
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
+import SwiperItem, { FoodSwiperProps } from "../../../../shared/interfaces/SwiperItem";
 
-const FoodSwiper: React.FC = () => {
+const FoodSwiper: React.FC<FoodSwiperProps> = ({ items }) => {
     return (
         <Swiper
             slidesPerView={"auto"}
@@ -18,12 +18,11 @@ const FoodSwiper: React.FC = () => {
                     spaceBetween: 50,
                 },
             }}
-            modules={[Pagination]}
             className="mySwiper"
         >
-            {dishes.map((dish) => (
-                <SwiperSlide className="swiper-slide" key={dish.id}>
-                    <FoodCard dish={dish} />
+            {items.map((item: SwiperItem) => (
+                <SwiperSlide className="swiper-slide" key={item.id}>
+                    <FoodCard item={item} />
                 </SwiperSlide>
             ))}
         </Swiper>

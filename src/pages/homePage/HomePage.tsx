@@ -4,6 +4,8 @@ import Footer from "../../shared/components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
 import FoodSwiper from "./components/FoodSwiper/FoodSwiper";
+import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
+import { dishes } from "../../assets/mockdata/signature";
 
 
 const Home = () => {
@@ -13,8 +15,9 @@ const Home = () => {
             <IntroSearch />
             <div className="home-page-content">
                 <div className="dish-list">
-                    <FoodSwiper />
+                    <FoodSwiper items={dishes} />
                 </div>
+                <ChefOfTheWeek />
                 <AboutUs />
             </div>
             <Footer />

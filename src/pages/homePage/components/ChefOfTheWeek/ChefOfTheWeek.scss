@@ -1,0 +1,38 @@
+.chef-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+
+    .chef-info {
+        display: flex;
+        flex-direction: column;
+        background-image: url("../../../../assets/images/yossi-shitrit.png");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 340px;
+        justify-content: flex-end;
+        align-items: center;
+
+        .chef-name-wrapper {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            opacity: 50%;
+            width: 100%;
+        }
+
+        .chef-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .description {
+            padding-top: 16px;
+        }
+    }
+
+    .chef-restaurants {
+        text-transform: uppercase;
+    }
+}
