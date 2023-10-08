@@ -6,16 +6,18 @@ const ChefOfTheWeek: React.FC = () => {
         <div className="chef-container">
             <h2>CHEF OF THE WEEK:</h2>
             <div className="chef-info">
-                <img
+                {/* <img
                     src={chefOfTheWeek.pictureOfChef}
                     alt={`${chefOfTheWeek.chefFirstName} ${chefOfTheWeek.chefLastName}`}
                     className="chef-image"
-                />
-                <h3>
-                    {chefOfTheWeek.chefFirstName} {chefOfTheWeek.chefLastName}
-                </h3>
-                <span className="body-text description">{chefOfTheWeek.description}</span>
+                /> */}
+                <div className="chef-name-wrapper">
+                    <h3>
+                        {chefOfTheWeek.chefFirstName} {chefOfTheWeek.chefLastName}
+                    </h3>
+                </div>
             </div>
+            <span className="body-text description">{chefOfTheWeek.description}</span>
             <h4 className="chef-restaurants">{chefOfTheWeek.chefFirstName}’S RESTAURANTS</h4>
             <div className="restaurants">
                 {chefOfTheWeek.restaurants.map((restaurant) => (
