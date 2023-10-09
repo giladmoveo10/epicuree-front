@@ -2,13 +2,13 @@
 @import "../../../styles/utilities/variables.scss";
 @import "../../../styles//utilities/colors.scss";
 
-// .restaurant {
-//     height: $card-restaurant-height;
-// }
+.restaurant {
+    height: $card-restaurant-height;
+}
 
-// .dish {
-//     height: $card-height;
-// }
+.dish {
+    height: $card-height;
+}
 
 .card {
     display: flex;
