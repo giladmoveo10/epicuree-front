@@ -1,0 +1,10 @@
+.restaurants-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+
+    .arrow-icon {
+        margin-left: 10px;
+    }
+}
