@@ -1,5 +1,6 @@
 import InfoCard from "../../../../shared/components/InfoCard/InfoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "./Carusel.scss";
 
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -10,17 +11,18 @@ const Carusel: React.FC<CardItemList> = ({ items }) => {
     return (
         <Swiper
             slidesPerView={"auto"}
-            spaceBetween={20}
+            spaceBetween={30}
             breakpoints={{
                 768: {
                     slidesPerView: 3,
                     spaceBetween: 50,
                 },
             }}
+            loop={true}
             className="mySwiper"
         >
             {items.map((item: CardItem) => (
-                <SwiperSlide className="swiper-slide" key={item.id}>
+                <SwiperSlide className="" key={item.id}>
                     <InfoCard item={item} />
                 </SwiperSlide>
             ))}

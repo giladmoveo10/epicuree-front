@@ -20,4 +20,13 @@ export const dishes = [
         descriptionPic: `${spicy}`,
         price: 88,
     },
+    {
+        id: 3,
+        title: "Pad Ki Mao 3!",
+        pic: `${padKiMao}`,
+        subtitle: "Shrimps, Glass Noodles, Kemiri Nuts, Shallots",
+        ingredients: "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        descriptionPic: `${spicy}`,
+        price: 88,
+    },
 ];

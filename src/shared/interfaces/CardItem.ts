@@ -1,7 +1,7 @@
 interface CardItem {
     id: number;
-    title: string;
     pic: string;
+    title?: string;
     chefName?: string;
     restaurantName?: string;
     ingredients?: string;
