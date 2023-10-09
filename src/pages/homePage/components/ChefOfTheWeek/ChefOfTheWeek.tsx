@@ -1,6 +1,7 @@
 import "./ChefOfTheWeek.scss";
 import { chefOfTheWeek } from "../../../../assets/mockdata/chefData";
 import Carusel from "../Carusel/Carusel";
+import AllRestaurants from "../AllRestaurants/AllRestaurants";
 
 const ChefOfTheWeek: React.FC = () => {
     return (
@@ -14,11 +15,11 @@ const ChefOfTheWeek: React.FC = () => {
                 </div>
             </div>
             <span className="body-text description">{chefOfTheWeek.description}</span>
-            <h4 className="chef-restaurants">{chefOfTheWeek.chefFirstName}’S RESTAURANTS</h4>
+            <h4 className="chef-restaurants">{chefOfTheWeek.chefFirstName}'S RESTAURANTS</h4>
             <div className="restaurants">
                 <Carusel items={chefOfTheWeek.restaurants} />
             </div>
-            <a href="#">All Restaurants </a>
+            <AllRestaurants />
         </div>
     );
 };
