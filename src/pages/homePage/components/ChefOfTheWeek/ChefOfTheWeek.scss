@@ -21,18 +21,17 @@
             opacity: 50%;
             width: 100%;
         }
+    }
 
-        .chef-image {
-            width: 100%;
-            height: auto;
-        }
-
-        .description {
-            padding-top: 16px;
-        }
+    .description {
+        padding-top: 16px;
     }
 
     .chef-restaurants {
         text-transform: uppercase;
+    }
+
+    .restaurants {
+        width: 100%;
     }
 }

@@ -1,10 +1,12 @@
+@import "../../styles/utilities/variables.scss";
+
 .homePage {
     display: flex;
     flex-direction: column;
 
     .home-page-content {
-
         .dish-list {
+            margin: 0px $home-page-margin;
         }
     }
 }
