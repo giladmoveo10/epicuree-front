@@ -1,4 +1,4 @@
-interface SwiperItem {
+interface CardItem {
     id: number;
     title: string;
     pic: string;
@@ -10,8 +10,8 @@ interface SwiperItem {
     rating?: number;
 }
 
-export interface FoodSwiperProps {
-    items: SwiperItem[];
+export interface CardItemList {
+    items: CardItem[];
 }
 
-export default SwiperItem;
+export default CardItem;

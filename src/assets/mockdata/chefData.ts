@@ -1,4 +1,4 @@
-import { restaurants } from "./restaurantsData"; // ! need to use it
+// import { restaurants } from "./restaurantsData"; // ! need to use it
 import Onza from "../images/onza.png";
 import Kitchen from "../images/kitchen-market.png";
 import Yosi from "../images/yossi-shitrit.png";

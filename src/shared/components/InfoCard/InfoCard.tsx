@@ -1,11 +1,11 @@
-import SwiperItem from "../../interfaces/SwiperItem";
-import "./FoodCard.scss";
+import CardItem from "../../interfaces/CardItem";
+import "./InfoCard.scss";
 
 interface FoodCardProps {
-    item: SwiperItem;
+    item: CardItem;
 }
 
-const FoodCard: React.FC<FoodCardProps> = ({item}) => {
+const InfoCard: React.FC<FoodCardProps> = ({ item }) => {
     return (
         <div className="food-card">
             <img src={item.pic} alt={item.title} className="dish-image" />
@@ -20,11 +20,10 @@ const FoodCard: React.FC<FoodCardProps> = ({item}) => {
                     )}
                     {item.price && <h2 className="price">{item.price}</h2>}
                     {item.rating && <span className="rating">{item.rating}</span>}
-                    {/* maybe add !== undefined before && */}
                 </div>
             </div>
         </div>
     );
 };
 
-export default FoodCard;
+export default InfoCard;

@@ -3,10 +3,9 @@ import Header from "../../shared/components/Header/Header";
 import Footer from "../../shared/components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
-import FoodSwiper from "./components/FoodSwiper/FoodSwiper";
+import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
 import { dishes } from "../../assets/mockdata/signature";
-
 
 const Home = () => {
     return (
@@ -15,7 +14,7 @@ const Home = () => {
             <IntroSearch />
             <div className="home-page-content">
                 <div className="dish-list">
-                    <FoodSwiper items={dishes} />
+                    <Carusel items={dishes} />
                 </div>
                 <ChefOfTheWeek />
                 <AboutUs />

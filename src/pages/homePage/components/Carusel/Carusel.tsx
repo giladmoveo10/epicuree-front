@@ -1,13 +1,12 @@
-import FoodCard from "../../../../shared/components/FoodCard/FoodCard";
+import InfoCard from "../../../../shared/components/InfoCard/InfoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination } from "swiper/modules";
 
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
-import SwiperItem, { FoodSwiperProps } from "../../../../shared/interfaces/SwiperItem";
+import CardItem, { CardItemList } from "../../../../shared/interfaces/CardItem";
 
-const FoodSwiper: React.FC<FoodSwiperProps> = ({ items }) => {
+const Carusel: React.FC<CardItemList> = ({ items }) => {
     return (
         <Swiper
             slidesPerView={"auto"}
@@ -20,13 +19,13 @@ const FoodSwiper: React.FC<FoodSwiperProps> = ({ items }) => {
             }}
             className="mySwiper"
         >
-            {items.map((item: SwiperItem) => (
+            {items.map((item: CardItem) => (
                 <SwiperSlide className="swiper-slide" key={item.id}>
-                    <FoodCard item={item} />
+                    <InfoCard item={item} />
                 </SwiperSlide>
             ))}
         </Swiper>
     );
 };
 
-export default FoodSwiper;
+export default Carusel;
