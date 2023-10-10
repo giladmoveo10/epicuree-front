@@ -11,14 +11,13 @@ const Carusel: React.FC<CardItemList> = ({ items }) => {
     return (
         <Swiper
             slidesPerView={"auto"}
-            spaceBetween={30}
+            spaceBetween={20}
             breakpoints={{
                 768: {
                     slidesPerView: 3,
                     spaceBetween: 50,
                 },
             }}
-            loop={true}
             className="mySwiper"
         >
             {items.map((item: CardItem) => (

@@ -12,5 +12,6 @@ export const chefOfTheWeek = {
     restaurants: [
         { id: 1, restaurantName: "Onza", pic: `${Onza}` },
         { id: 2, restaurantName: "Kitchen", pic: `${Kitchen}` },
+        { id: 3, restaurantName: "Kitchen", pic: `${Kitchen}` },
     ],
 };

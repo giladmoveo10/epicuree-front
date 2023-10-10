@@ -4,13 +4,20 @@
 
 .restaurant {
     height: $card-restaurant-height;
+    width: $card-width;
+
+    @media (min-width: $desktop-breakpoint) {
+        height: $card-restaurant-desktop-height;
+    }
 }
 
 .dish {
     height: $card-height;
+    width: $card-width;
 
     @media (min-width: $desktop-breakpoint) {
         height: $card-desktop-height;
+        width: $card-desktop-width;
     }
 }
 
@@ -19,16 +26,15 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 20px 0;
-    width: $card-width;
     background-color: $color-secondary-pearl;
-
-    @media (min-width: $desktop-breakpoint) {
-        width: $card-desktop-width;
-    }
 
     .image {
         width: 100%;
         height: 152px;
+
+        @media (min-width: $desktop-breakpoint) {
+            height: 210px;
+        }
     }
 
     .card-info {
@@ -47,8 +53,18 @@
         .description {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
+
+            @media (min-width: $desktop-breakpoint) {
+                align-items: center;
+            }
+
+            .body-text {
+                @media (min-width: $desktop-breakpoint) {
+                    text-align: center;
+                }
+            }
 
             .description-pic {
                 width: 30px;
