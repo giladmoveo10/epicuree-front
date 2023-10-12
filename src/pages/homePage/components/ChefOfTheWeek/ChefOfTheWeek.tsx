@@ -4,6 +4,8 @@ import Carusel from "../Carusel/Carusel";
 import AllRestaurants from "../AllRestaurants/AllRestaurants";
 
 const ChefOfTheWeek: React.FC = () => {
+    
+
     return (
         <div className="chef-container">
             <div className="chef-title">

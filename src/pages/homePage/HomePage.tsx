@@ -18,22 +18,14 @@ const Home = () => {
         const getDishes = async () => {
             try {
                 setIsLoading(true);
-                const dishess = await fetchDishes();
-                setloadedDishes(transformToCardItem(dishess));
+                const dishes = await fetchDishes();
+                setloadedDishes(transformToCardItem(dishes));
             } catch (error) {
                 console.log(error);
-                // throw error;
             }
         };
 
         getDishes();
-
-        // fetchDishes().then((data) => {
-        //     setloadedDishes(data);
-        //     setIsLoading(false);
-        // }).catch((error) => {
-        //     console.log(error);
-        // })
     }, []);
 
     return (
