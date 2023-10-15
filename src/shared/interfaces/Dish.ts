@@ -3,6 +3,7 @@ export interface Dish {
     name: string;
     image: string;
     ingredients: string[];
-    // descriptionPic: string; // image
+    ingredientsString?: string;
+    descriptionPic: string;
     price: number;
 }

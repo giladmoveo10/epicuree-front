@@ -4,7 +4,7 @@ interface CardItem {
     title?: string;
     chefName?: string;
     restaurantName?: string;
-    ingredients?: string[];
+    ingredients?: string;
     descriptionPic?: string;
     price?: number;
     rating?: number;

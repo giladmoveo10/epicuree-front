@@ -19,9 +19,10 @@ const Home = () => {
                 setIsLoading(true);
                 const dishes = await fetchDishes();
                 setloadedDishes(transformDishToCardItem(dishes));
-                setIsLoading(false);
             } catch (error) {
                 console.log(error);
+            } finally {
+                setIsLoading(false);
             }
         };
 
