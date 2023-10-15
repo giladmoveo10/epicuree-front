@@ -1,12 +1,20 @@
-import { Restaurant } from "./Restaurant";
+import CardItem from "./CardItem";
+import { Restaurant, RestaurantFromDB } from "./Restaurant";
 
 export interface Chef {
-    id: number;
+    id: string;
     firstName: string;
     lastName: string;
-    pic: string;
+    image: string;
     description: string;
     restaurants: Restaurant[];
+    restaurantCards?: CardItem[];
 }
 
-// export default interface cheff {}
+export interface ChefFromDB {
+    _id: string;
+    name: string;
+    image: string;
+    description: string;
+    restaurants: RestaurantFromDB[];
+}

@@ -1,6 +1,15 @@
 export interface Restaurant {
-    id: number;
-    chefId: number;
+    id: string;
     name: string;
-    pic: string;
+    chef: string;
+    image: string;
+    dishes: string[];
+}
+
+export interface RestaurantFromDB {
+    _id: string;
+    name: string;
+    chef: string;
+    image: string;
+    dishes: string[];
 }

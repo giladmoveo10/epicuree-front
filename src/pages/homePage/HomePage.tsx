@@ -6,9 +6,8 @@ import IntroSearch from "./components/IntroSearch/IntroSearch";
 import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
 import { useEffect, useState } from "react";
-import { fetchDishes, transformToCardItem } from "./apiHomePage";
-import { Dish } from "../../shared/interfaces/Dish";
-import CardItem, { CardItemList } from "../../shared/interfaces/CardItem";
+import { fetchDishes, transformDishToCardItem } from "./apiHomePage";
+import CardItem from "../../shared/interfaces/CardItem";
 
 const Home = () => {
     const [loadedDishes, setloadedDishes] = useState<CardItem[]>([]);
@@ -19,7 +18,8 @@ const Home = () => {
             try {
                 setIsLoading(true);
                 const dishes = await fetchDishes();
-                setloadedDishes(transformToCardItem(dishes));
+                setloadedDishes(transformDishToCardItem(dishes));
+                setIsLoading(false);
             } catch (error) {
                 console.log(error);
             }
@@ -34,7 +34,7 @@ const Home = () => {
             <IntroSearch />
             <div className="home-page-content">
                 <div className="dish-list">
-                    <Carusel items={loadedDishes} />
+                    {isLoading ? <p>Loading...</p> : <Carusel items={loadedDishes} />}
                 </div>
                 <ChefOfTheWeek />
                 <AboutUs />

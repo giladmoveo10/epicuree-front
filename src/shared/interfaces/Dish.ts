@@ -1,8 +1,8 @@
 export interface Dish {
-    _id: number;
+    _id: string;
     name: string;
     image: string;
     ingredients: string[];
-    // descriptionPic: string;
+    // descriptionPic: string; // image
     price: number;
 }
