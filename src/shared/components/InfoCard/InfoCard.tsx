@@ -10,7 +10,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ item }) => {
 
     return (
         <div className={`card ${isRestaurant ? "restaurant" : "dish"}`}>
-            <img src={item.pic} alt={item.title} className="image" />
+            <img src={item.image} alt={item.title} className="image" />
             <div className="card-info">
                 {item.title && <h3 className="item-title">{item.title}</h3>}
                 {item.restaurantName && <h3 className="item-title">{item.restaurantName}</h3>}
