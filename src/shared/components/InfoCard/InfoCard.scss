@@ -16,8 +16,8 @@
     width: $card-width;
 
     @media (min-width: $desktop-breakpoint) {
-        height: $card-desktop-height;
         width: $card-desktop-width;
+        height: $card-desktop-height;
     }
 }
 
@@ -44,6 +44,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: $card-desktop-height - 210px;
         }
 
         .item-title {

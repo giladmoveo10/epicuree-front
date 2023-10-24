@@ -4,6 +4,7 @@ export interface Dish {
     image: string;
     ingredients: string[];
     ingredientsString?: string;
-    descriptionPic: string;
     price: number;
+    restaurant: string;
+    signatureDish: boolean;
 }
