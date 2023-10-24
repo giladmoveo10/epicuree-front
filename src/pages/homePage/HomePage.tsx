@@ -35,6 +35,7 @@ const Home = () => {
             <IntroSearch />
             <div className="home-page-content">
                 <div className="dish-list">
+                    <h2 className="signature-dish-title">Signature Dish of:</h2>
                     {isLoading ? <p>Loading...</p> : <Carusel items={loadedDishes} />}
                 </div>
                 <ChefOfTheWeek />

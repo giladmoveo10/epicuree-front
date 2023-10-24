@@ -4,7 +4,6 @@ import { Dish } from "../../shared/interfaces/Dish";
 import CardItem from "../../shared/interfaces/CardItem";
 import { Chef, ChefFromDB } from "../../shared/interfaces/Chef";
 import { Restaurant, RestaurantFromDB } from "../../shared/interfaces/Restaurant";
-import { transform } from "typescript";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -16,7 +15,6 @@ export const fetchDishes = async (): Promise<Dish[]> => {
             ingredientsString: dish.ingredients.join(", "),
         }));
         return transformedDishes;
-        // return response.data;
     } catch (error) {
         console.error("Failed to fetch Dishes:", error);
         throw error;
