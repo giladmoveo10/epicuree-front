@@ -6,7 +6,7 @@ import IntroSearch from "./components/IntroSearch/IntroSearch";
 import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
 import { useEffect, useState } from "react";
-import { fetchDishes, transformDishToCardItem } from "./apiHomePage";
+import { fetchDishes, transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
 import CardItem from "../../shared/interfaces/CardItem";
 
 const Home = () => {
@@ -14,10 +14,10 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const getDishes = async () => {
+        const getSigDishes = async () => {
             try {
                 setIsLoading(true);
-                const dishes = await fetchDishes();
+                const dishes = await fetchSignatureDishes();
                 setloadedDishes(transformDishToCardItem(dishes));
             } catch (error) {
                 console.log(error);
@@ -26,7 +26,7 @@ const Home = () => {
             }
         };
 
-        getDishes();
+        getSigDishes();
     }, []);
 
     return (

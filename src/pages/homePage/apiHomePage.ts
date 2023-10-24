@@ -10,16 +10,31 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const fetchDishes = async (): Promise<Dish[]> => {
     try {
         const response = await axios.get<Dish[]>(`${BASE_URL}/dishes`);
-        const transformedDishes = response.data.map((dish) => ({
-            ...dish,
-            ingredientsString: dish.ingredients.join(", "),
-        }));
+        const transformedDishes = processDishes(response.data);
         return transformedDishes;
     } catch (error) {
         console.error("Failed to fetch Dishes:", error);
         throw error;
     }
 };
+
+export const fetchSignatureDishes = async (): Promise<Dish[]> => {
+    try {
+        const response = await axios.get<Dish[]>(`${BASE_URL}/dishes/signature`);
+        const transformedDishes = processDishes(response.data);
+        return transformedDishes;
+    } catch (error) {
+        console.error("Failed to fetch Signature Dishes:", error);
+        throw error;
+    }
+};
+
+function processDishes(dishes: Dish[]): Dish[] {
+    return dishes.map((dish) => ({
+        ...dish,
+        ingredientsString: dish.ingredients.join(", "),
+    }));
+}
 
 export function transformDishToCardItem(dishes: Dish[]): CardItem[] {
     return dishes.map((dish) => ({
