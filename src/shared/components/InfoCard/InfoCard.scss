@@ -2,6 +2,14 @@
 @import "../../../styles/utilities/variables.scss";
 @import "../../../styles//utilities/colors.scss";
 
+.popular {
+    width: $card-width;
+
+    @media (min-width: $desktop-breakpoint) {
+        width: $card-desktop-width;
+    }
+}
+
 .chef-of-the-week {
     height: $card-restaurant-height;
     width: $card-width;
@@ -39,7 +47,9 @@
     .card-info {
         display: flex;
         flex-direction: column;
-        padding: 16px;
+        padding: 0px 16px;
+        padding-bottom: 16px;
+        padding-top: 5px;
         height: 100%;
 
         @media (min-width: $desktop-breakpoint) {
@@ -47,8 +57,27 @@
         }
 
         .card-header {
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: $desktop-breakpoint) {
+                align-items: center;
+            }
+
             .item-title {
-                margin: 0px;
+                margin: 0;
+            }
+
+            .chef-name {
+                @media (min-width: $desktop-breakpoint) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .stars {
+                @media (max-width: $desktop-breakpoint) {
+                    display: none;
+                }
             }
         }
 

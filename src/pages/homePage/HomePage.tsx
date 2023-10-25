@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import IntroSearch from "./components/IntroSearch/IntroSearch";
 import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
+import PopularRestaurants from "./components/PopularRestaurants/PopularRestaurants";
 import { useEffect, useState } from "react";
 import { transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
 import CardItem, { CardItemType } from "../../shared/interfaces/CardItem";
@@ -34,6 +35,7 @@ const Home = () => {
             <Header />
             <IntroSearch />
             <div className="home-page-content">
+                <PopularRestaurants />
                 <div className="signature-list">
                     <h2 className="signature-dish-title">Signature Dish of:</h2>
                     {isLoading ? (
@@ -43,8 +45,8 @@ const Home = () => {
                     )}
                 </div>
                 <ChefOfTheWeek />
-                <AboutUs />
             </div>
+            <AboutUs />
             <Footer />
         </div>
     );

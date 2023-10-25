@@ -66,6 +66,7 @@ function transformRestaurantToCardItem(restaurants: Restaurant[]): CardItem[] {
         restaurantName: restaurant.name,
         stars: restaurant.stars,
         popular: restaurant.popular,
+        chefName: restaurant.chef.name,
     }));
 }
 
@@ -96,6 +97,16 @@ export const fetchFeaturedChef = async (): Promise<Chef> => {
         return transformToChefItem(response.data);
     } catch (error) {
         console.error("Failed to fetch featured chef:", error);
+        throw error;
+    }
+};
+
+export const fetchPopularRestaurants = async (): Promise<CardItem[]> => {
+    try {
+        const response = await axios.get(`${BASE_URL}/restaurants/popular`);
+        return transformRestaurantToCardItem(response.data);
+    } catch (error) {
+        console.error("Failed to fetch popular restaurants:", error);
         throw error;
     }
 };

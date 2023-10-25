@@ -18,9 +18,9 @@ const InfoCard: React.FC<InfoCardProps> = ({ item, cardType }) => {
                 <div className="card-header">
                     {item.title && <h3 className="item-title">{item.title}</h3>}
                     {item.restaurantName && <h3 className="item-title">{item.restaurantName}</h3>}
-                    {item.chefName && <h3 className="chef-name">{item.chefName}</h3>}
+                    {item.chefName && <span className="chef-name body-text">{item.chefName}</span>}
                     {cardType === CardItemType.POPULAR_RESTAURANT && item.stars && (
-                        <h3 className="stars">stars: {item.stars}</h3>
+                        <div className="stars body-text">stars: {item.stars} / 5</div>
                     )}
                 </div>
                 <div className="description">
