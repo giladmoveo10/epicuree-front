@@ -6,10 +6,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const getDishes = async (): Promise<any> => {
     try {
-        const dishes = await axios.get(`${BASE_URL}/dishes`);
-        console.log("dishessss", typeof dishes);
-        // return await axios.get(`${BASE_URL}/dishes`);
-        return dishes;
+        return await axios.get(`${BASE_URL}/dishes`);
     } catch (error) {
         console.error("Failed to fetch Dishes:", error);
         throw error;
@@ -18,10 +15,7 @@ export const getDishes = async (): Promise<any> => {
 
 export const getSignatureDishes = async (): Promise<any> => {
     try {
-        const signatureDishes = await axios.get(`${BASE_URL}/dishes/signature`);
-        console.log("signatureDishes", typeof signatureDishes);
-        return signatureDishes;
-        // return await axios.get(`${BASE_URL}/dishes/signature`); //.data
+        return await axios.get(`${BASE_URL}/dishes/signature`);
     } catch (error) {
         console.error("Failed to fetch Signature Dishes:", error);
         throw error;
