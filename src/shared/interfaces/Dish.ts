@@ -8,5 +8,4 @@ export interface Dish {
     restaurant: string;
     signatureDish: boolean;
     tags: string[];
-    // stars?: number;
 }
