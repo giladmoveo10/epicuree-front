@@ -5,5 +5,5 @@ export interface Restaurant {
     image: string;
     dishes: string[];
     stars: number;
-    // popular: boolean;
+    popular: boolean;
 }

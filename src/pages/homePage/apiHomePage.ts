@@ -65,6 +65,7 @@ function transformRestaurantToCardItem(restaurants: Restaurant[]): CardItem[] {
         image: restaurant.image,
         restaurantName: restaurant.name,
         stars: restaurant.stars,
+        popular: restaurant.popular,
     }));
 }
 
