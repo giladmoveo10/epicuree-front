@@ -7,7 +7,7 @@ import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
 import { useEffect, useState } from "react";
 import { transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
-import CardItem from "../../shared/interfaces/CardItem";
+import CardItem, { CardItemType } from "../../shared/interfaces/CardItem";
 
 const Home = () => {
     const [loadedDishes, setloadedDishes] = useState<CardItem[]>([]);
@@ -36,7 +36,11 @@ const Home = () => {
             <div className="home-page-content">
                 <div className="signature-list">
                     <h2 className="signature-dish-title">Signature Dish of:</h2>
-                    {isLoading ? <p>Loading...</p> : <Carusel items={loadedDishes} />}
+                    {isLoading ? (
+                        <p>Loading Signature Dishes</p>
+                    ) : (
+                        <Carusel items={loadedDishes} cardType={CardItemType.DISH} />
+                    )}
                 </div>
                 <ChefOfTheWeek />
                 <AboutUs />

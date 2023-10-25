@@ -3,7 +3,7 @@ import axios from "axios";
 import { Dish } from "../../shared/interfaces/Dish";
 import CardItem from "../../shared/interfaces/CardItem";
 import { Chef, ChefFromDB } from "../../shared/interfaces/Chef";
-import { Restaurant, RestaurantFromDB } from "../../shared/interfaces/Restaurant";
+import { Restaurant } from "../../shared/interfaces/Restaurant";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -37,7 +37,6 @@ function processDishes(dishes: Dish[]): Dish[] {
 }
 
 export function transformDishToCardItem(dishes: Dish[]): CardItem[] {
-    console.log("dishes", dishes);
     return dishes.map((dish) => ({
         id: dish.id,
         image: dish.image,
@@ -65,6 +64,7 @@ function transformRestaurantToCardItem(restaurants: Restaurant[]): CardItem[] {
         id: restaurant.id,
         image: restaurant.image,
         restaurantName: restaurant.name,
+        stars: restaurant.stars,
     }));
 }
 
@@ -76,16 +76,7 @@ const transformToChefItems = (chefsFromDB: ChefFromDB[]): Chef[] => {
 
 const transformToChefItem = (chefFromDB: ChefFromDB): Chef => {
     const [firstName, lastName] = chefFromDB.name.split(" ");
-
-    const restaurants = chefFromDB.restaurants.map((restaurant: RestaurantFromDB) => ({
-        id: restaurant._id,
-        name: restaurant.name,
-        image: restaurant.image,
-        chef: restaurant.chef,
-        dishes: restaurant.dishes,
-    }));
-
-    const restaurantCards = transformRestaurantToCardItem(restaurants);
+    const restaurantCards = transformRestaurantToCardItem(chefFromDB.restaurants);
 
     return {
         id: chefFromDB._id,
@@ -93,7 +84,7 @@ const transformToChefItem = (chefFromDB: ChefFromDB): Chef => {
         lastName: lastName,
         image: chefFromDB.image,
         description: chefFromDB.description,
-        restaurants: restaurants,
+        restaurants: chefFromDB.restaurants,
         restaurantCards: restaurantCards,
     };
 };

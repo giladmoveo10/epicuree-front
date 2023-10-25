@@ -5,9 +5,9 @@ import "./Carusel.scss";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
-import CardItem, { CardItemList } from "../../../../shared/interfaces/CardItem";
+import CardItem, { CardItemList, CardItemType } from "../../../../shared/interfaces/CardItem";
 
-const Carusel: React.FC<CardItemList> = ({ items }) => {
+const Carusel: React.FC<CardItemList> = ({ items, cardType }) => {
     return (
         <Swiper
             slidesPerView={"auto"}
@@ -22,7 +22,7 @@ const Carusel: React.FC<CardItemList> = ({ items }) => {
         >
             {items.map((item: CardItem) => (
                 <SwiperSlide className="" key={item.id}>
-                    <InfoCard item={item} />
+                    <InfoCard item={item} cardType={cardType} />
                 </SwiperSlide>
             ))}
         </Swiper>

@@ -1,15 +1,16 @@
-import CardItem from "../../interfaces/CardItem";
+import CardItem, { CardItemType } from "../../interfaces/CardItem";
 import "./InfoCard.scss";
 
 interface InfoCardProps {
     item: CardItem;
+    cardType: CardItemType;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ item }) => {
-    const isRestaurant = item.restaurantName;
+const InfoCard: React.FC<InfoCardProps> = ({ item, cardType }) => {
+    const type = cardType;
 
     return (
-        <div className={`card ${isRestaurant ? "restaurant" : "dish"}`}>
+        <div className={`card ${type}`}>
             <>
                 <img src={item.image} alt={item.title} className="image" />
             </>
@@ -18,7 +19,9 @@ const InfoCard: React.FC<InfoCardProps> = ({ item }) => {
                     {item.title && <h3 className="item-title">{item.title}</h3>}
                     {item.restaurantName && <h3 className="item-title">{item.restaurantName}</h3>}
                     {item.chefName && <h3 className="chef-name">{item.chefName}</h3>}
-                    {item.stars && <h3 className="stars">stars: {item.stars}</h3>}
+                    {cardType === CardItemType.POPULAR_RESTAURANT && item.stars && (
+                        <h3 className="stars">stars: {item.stars}</h3>
+                    )}
                 </div>
                 <div className="description">
                     <>{item.ingredients && <span className="body-text">{item.ingredients}</span>}</>
