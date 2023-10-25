@@ -37,12 +37,15 @@ function processDishes(dishes: Dish[]): Dish[] {
 }
 
 export function transformDishToCardItem(dishes: Dish[]): CardItem[] {
+    console.log("dishes", dishes);
     return dishes.map((dish) => ({
-        id: dish._id,
+        id: dish.id,
         image: dish.image,
         title: dish.name,
         ingredients: dish.ingredientsString,
         price: dish.price,
+        tags: dish.tags,
+        signatureDish: dish.signatureDish,
     }));
 }
 

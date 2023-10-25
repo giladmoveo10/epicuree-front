@@ -8,7 +8,8 @@ interface CardItem {
     descriptionPic?: string;
     price?: number;
     rating?: number;
-    starts?: number;
+    stars?: number;
+    tags?: string[];
 }
 
 export interface CardItemList {

@@ -6,7 +6,7 @@ import IntroSearch from "./components/IntroSearch/IntroSearch";
 import Carusel from "./components/Carusel/Carusel";
 import ChefOfTheWeek from "./components/ChefOfTheWeek/ChefOfTheWeek";
 import { useEffect, useState } from "react";
-import { fetchDishes, transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
+import { transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
 import CardItem from "../../shared/interfaces/CardItem";
 
 const Home = () => {
@@ -34,7 +34,7 @@ const Home = () => {
             <Header />
             <IntroSearch />
             <div className="home-page-content">
-                <div className="dish-list">
+                <div className="signature-list">
                     <h2 className="signature-dish-title">Signature Dish of:</h2>
                     {isLoading ? <p>Loading...</p> : <Carusel items={loadedDishes} />}
                 </div>

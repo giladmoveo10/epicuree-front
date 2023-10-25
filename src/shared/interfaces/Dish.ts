@@ -1,5 +1,5 @@
 export interface Dish {
-    _id: string;
+    id: string;
     name: string;
     image: string;
     ingredients: string[];
@@ -7,4 +7,6 @@ export interface Dish {
     price: number;
     restaurant: string;
     signatureDish: boolean;
+    tags: string[];
+    // stars?: number;
 }
