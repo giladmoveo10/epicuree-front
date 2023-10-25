@@ -1,6 +1,4 @@
 import axios from "axios";
-import { Dish } from "../../shared/interfaces/Dish";
-import { Chef } from "../../shared/interfaces/Chef";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
