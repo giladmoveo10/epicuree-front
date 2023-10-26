@@ -1,0 +1,49 @@
+@import "../../../../styles/utilities/colors.scss";
+@import "../../../../styles/utilities/variables.scss";
+
+.icon-meaning-container {
+    background-color: $color-secondary-bright;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0px;
+    margin-top: 50px;
+
+    @media (min-width: $desktop-breakpoint) {
+        padding: 39px 0px;
+    }
+
+    .title {
+        text-transform: uppercase;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        @media (min-width: $desktop-breakpoint) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .icon-meaning-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .image {
+                width: 46px;
+                height: 36px;
+                margin-bottom: 20px;
+
+                @media (min-width: $desktop-breakpoint) {
+                    width: 75px;
+                    height: 57px;
+                }
+            }
+        }
+    }
+}
