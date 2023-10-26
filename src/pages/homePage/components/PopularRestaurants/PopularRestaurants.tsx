@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchPopularRestaurants } from "../../apiHomePage";
 import CardItem, { CardItemType } from "../../../../shared/interfaces/CardItem";
 import Carusel from "../Carusel/Carusel";
+import AllRestaurants from "../AllRestaurants/AllRestaurants";
 
 const PopularRestaurants: React.FC = () => {
     const [popularRestaurants, setPopularRestaurants] = useState<CardItem[]>([]);
@@ -21,13 +22,18 @@ const PopularRestaurants: React.FC = () => {
     }, []);
 
     return (
-        <div className="restaurant-list">
-            <h2 className="restaurant-title">Popular Restaurants:</h2>
-            {isLoading ? (
-                <p>Loading Popular Restaurants</p>
-            ) : (
-                <Carusel items={popularRestaurants} cardType={CardItemType.POPULAR_RESTAURANT} />
-            )}
+        <div className="container">
+            <div className="restaurant-list">
+                <h2 className="restaurant-title">Popular Restaurants:</h2>
+                {isLoading ? (
+                    <p>Loading Popular Restaurants</p>
+                ) : (
+                    <Carusel items={popularRestaurants} cardType={CardItemType.POPULAR_RESTAURANT} />
+                )}
+            </div>
+            <div className="all-restaurants">
+                <AllRestaurants />
+            </div>
         </div>
     );
 };

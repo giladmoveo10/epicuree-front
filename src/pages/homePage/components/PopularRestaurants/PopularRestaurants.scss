@@ -1,16 +1,25 @@
 @import "../../../../styles/utilities/variables.scss";
 
-.restaurant-list {
+.container {
     margin: 0px $home-page-margin;
 
-    .restaurant-title {
-        text-transform: uppercase;
-        margin-bottom: 0px;
+    .restaurant-list {
+        .restaurant-title {
+            text-transform: uppercase;
+            margin-bottom: 0px;
 
+            @media (min-width: $desktop-breakpoint) {
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .all-restaurants {
         @media (min-width: $desktop-breakpoint) {
             display: flex;
-            justify-content: center;
-            margin-top: 50px;
+            justify-content: flex-end;
         }
     }
 }

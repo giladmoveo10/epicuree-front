@@ -15,7 +15,7 @@ const Carusel: React.FC<CardItemList> = ({ items, cardType }) => {
             breakpoints={{
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 50,
+                    spaceBetween: 100,
                 },
             }}
             className="mySwiper"
