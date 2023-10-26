@@ -32,7 +32,7 @@ const ChefOfTheWeek: React.FC = () => {
     return (
         <div className="chef-container">
             <div className="chef-title">
-                <h2>CHEF OF THE WEEK:</h2>
+                <h2>Chef of the week:</h2>
             </div>
             {isLoading ? (
                 <p>Loading Chef Data...</p>

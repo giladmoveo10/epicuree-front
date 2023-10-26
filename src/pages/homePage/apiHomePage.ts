@@ -1,47 +1,45 @@
-// api.js
-import axios from "axios";
 import { Dish } from "../../shared/interfaces/Dish";
 import CardItem from "../../shared/interfaces/CardItem";
 import { Chef, ChefFromDB } from "../../shared/interfaces/Chef";
 import { Restaurant, RestaurantFromDB } from "../../shared/interfaces/Restaurant";
-import { transform } from "typescript";
-
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+import { getDishes, getSignatureDishes, getChefs, getFeaturedChef } from "../../services/HomePage";
 
 export const fetchDishes = async (): Promise<Dish[]> => {
-    try {
-        const response = await axios.get<Dish[]>(`${BASE_URL}/dishes`);
-        const transformedDishes = response.data.map((dish) => ({
-            ...dish,
-            ingredientsString: dish.ingredients.join(", "),
-        }));
-        return transformedDishes;
-        // return response.data;
-    } catch (error) {
-        console.error("Failed to fetch Dishes:", error);
-        throw error;
-    }
+    const response = await getDishes();
+    const transformedDishes = processDishes(response.data);
+    return transformedDishes;
 };
 
-export function transformDishToCardItem(dishes: Dish[]): CardItem[] {
+export const fetchSignatureDishes = async (): Promise<Dish[]> => {
+    const response = await getSignatureDishes();
+    const transformedDishes = processDishes(response.data);
+    return transformedDishes;
+};
+
+function processDishes(dishes: Dish[]): Dish[] {
     return dishes.map((dish) => ({
-        id: dish._id,
+        ...dish,
+        ingredientsString: dish.ingredients.join(", "),
+    }));
+}
+
+export function transformDishToCardItem(dishes: Dish[]): CardItem[] {
+    console.log("dishes", dishes);
+    return dishes.map((dish) => ({
+        id: dish.id,
         image: dish.image,
         title: dish.name,
         ingredients: dish.ingredientsString,
         price: dish.price,
+        tags: dish.tags,
+        signatureDish: dish.signatureDish,
     }));
 }
 
 export const fetchChefs = async (): Promise<Chef[]> => {
-    try {
-        const response = await axios.get(`${BASE_URL}/chefs`);
-        const transformedChefs = transformToChefItems(response.data);
-        return transformedChefs;
-    } catch (error) {
-        console.error("Failed to fetch chefs:", error);
-        throw error;
-    }
+    const response = await getChefs();
+    const transformedChefs = transformToChefItems(response.data);
+    return transformedChefs;
 };
 
 function transformRestaurantToCardItem(restaurants: Restaurant[]): CardItem[] {
@@ -83,11 +81,6 @@ const transformToChefItem = (chefFromDB: ChefFromDB): Chef => {
 };
 
 export const fetchFeaturedChef = async (): Promise<Chef> => {
-    try {
-        const response = await axios.get(`${BASE_URL}/featuredChef`);
-        return transformToChefItem(response.data);
-    } catch (error) {
-        console.error("Failed to fetch featured chef:", error);
-        throw error;
-    }
+    const response = await getFeaturedChef();
+    return transformToChefItem(response.data);
 };

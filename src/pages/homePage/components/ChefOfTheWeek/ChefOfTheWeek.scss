@@ -5,6 +5,7 @@
     padding: 20px;
 
     .chef-title {
+        text-transform: uppercase;
         @media (min-width: $desktop-breakpoint) {
             display: flex;
             justify-content: center;
