@@ -2,7 +2,7 @@ import { Dish } from "../../shared/interfaces/Dish";
 import CardItem from "../../shared/interfaces/CardItem";
 import { Chef, ChefFromDB } from "../../shared/interfaces/Chef";
 import { Restaurant, RestaurantFromDB } from "../../shared/interfaces/Restaurant";
-import { getDishes, getSignatureDishes, getChefs, getFeaturedChef } from "./apiServiceHome";
+import { getDishes, getSignatureDishes, getChefs, getFeaturedChef } from "../../services/HomePage";
 
 export const fetchDishes = async (): Promise<Dish[]> => {
     const response = await getDishes();
