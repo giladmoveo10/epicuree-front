@@ -4,6 +4,7 @@ import AllRestaurants from "../AllRestaurants/AllRestaurants";
 import { useEffect, useState } from "react";
 import { fetchFeaturedChef } from "../../apiHomePage";
 import { Chef } from "../../../../shared/interfaces/Chef";
+import { CardItemType } from "../../../../shared/interfaces/CardItem";
 
 const ChefOfTheWeek: React.FC = () => {
     const [chefOfTheWeek, setChefOfTheWeek] = useState<Chef | null>(null);
@@ -50,7 +51,12 @@ const ChefOfTheWeek: React.FC = () => {
                     </div>
                     <h4 className="chef-restaurants">{chefOfTheWeek?.firstName}'S RESTAURANTS</h4>
                     <div className="restaurants">
-                        {chefOfTheWeek?.restaurantCards && <Carusel items={chefOfTheWeek.restaurantCards} />}
+                        {chefOfTheWeek?.restaurantCards && (
+                            <Carusel
+                                items={chefOfTheWeek.restaurantCards}
+                                cardType={CardItemType.CHEF_RESTAURANT}
+                            />
+                        )}
                     </div>
                     <AllRestaurants />
                 </>

@@ -1,5 +1,5 @@
 import CardItem from "./CardItem";
-import { Restaurant, RestaurantFromDB } from "./Restaurant";
+import { Restaurant } from "./Restaurant";
 
 export interface Chef {
     id: string;
@@ -16,5 +16,5 @@ export interface ChefFromDB {
     name: string;
     image: string;
     description: string;
-    restaurants: RestaurantFromDB[];
+    restaurants: Restaurant[];
 }

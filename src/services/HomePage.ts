@@ -37,3 +37,12 @@ export const getFeaturedChef = async (): Promise<any> => {
         throw error;
     }
 };
+
+export const getPopularRestaurants = async (): Promise<any> => {
+    try {
+        return await axios.get(`${BASE_URL}/restaurants/popular`);
+    } catch (error) {
+        console.error("Failed to fetch Popular Restaurants:", error);
+        throw error;
+    }
+};
