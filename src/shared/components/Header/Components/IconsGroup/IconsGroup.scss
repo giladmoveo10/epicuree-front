@@ -1,0 +1,15 @@
+@import "src/styles/utilities/variables.scss";
+
+.icon-group {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+    padding-right: 18px;
+    position: fixed;
+    right: 0;
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-right: 35px;
+        gap: 24px;
+    }
+}

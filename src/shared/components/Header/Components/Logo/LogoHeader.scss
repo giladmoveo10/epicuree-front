@@ -1,0 +1,22 @@
+@import "src/styles/utilities/variables.scss";
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: fixed;
+
+    @media (min-width: $desktop-breakpoint) {
+        left: 0;
+        padding-left: 40px;
+    }
+
+    img {
+        width: 32.934px;
+        height: 32px;
+    }
+
+    .logo-text {
+        // some styles
+        padding-left: 10px;
+    }
+}

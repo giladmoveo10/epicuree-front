@@ -1,0 +1,23 @@
+@import "../../styles/utilities/variables.scss";
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+
+    .home-page-content {
+        .signature-list {
+            margin: 0px $home-page-margin;
+
+            .signature-dish-title {
+                text-transform: uppercase;
+                margin-bottom: 0px;
+
+                @media (min-width: $desktop-breakpoint) {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}
