@@ -1,4 +1,5 @@
 import CardItem, { CardItemType } from "../../interfaces/CardItem";
+import icons from "../../services/icons.service";
 import "./InfoCard.scss";
 
 interface InfoCardProps {
@@ -28,17 +29,18 @@ const InfoCard: React.FC<InfoCardProps> = ({ item, cardType }) => {
                     <div className="tags">
                         {item.tags &&
                             item.tags.map(
-                                (tag, index) =>
-                                    tag && (
+                                (tagName, index) =>
+                                    tagName && (
                                         <img
                                             key={index}
-                                            src={tag}
-                                            alt={`Tag ${index + 1}`}
+                                            src={icons[tagName]}
+                                            alt={`Tag ${tagName}`}
                                             className="tag-pic"
                                         />
                                     )
                             )}
                     </div>
+                    {/* <img src={icons["Spicy"]} alt="" /> */}
                     {item.rating && <span className="rating">{item.rating}</span>}
                 </div>
                 <div className="card-footer">{item.price && <h2 className="price">{item.price}</h2>}</div>
