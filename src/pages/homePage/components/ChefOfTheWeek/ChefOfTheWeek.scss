@@ -33,7 +33,8 @@
             align-items: center;
 
             @media (min-width: $desktop-breakpoint) {
-                width: 2000px;
+                // width: 2000px;
+                width: 100%;
             }
 
             .chef-name-wrapper {
@@ -50,6 +51,7 @@
 
             @media (min-width: $desktop-breakpoint) {
                 padding-left: 16px;
+                width: 100%;
             }
         }
     }
