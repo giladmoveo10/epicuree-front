@@ -9,6 +9,7 @@ import PopularRestaurants from "./components/PopularRestaurants/PopularRestauran
 import { useEffect, useState } from "react";
 import { transformDishToCardItem, fetchSignatureDishes } from "./apiHomePage";
 import CardItem, { CardItemType } from "../../shared/interfaces/CardItem";
+import MeaningOfIcons from "./components/MeaningOfIcons/MeaningOfIcons";
 
 const Home = () => {
     const [loadedDishes, setloadedDishes] = useState<CardItem[]>([]);
@@ -44,6 +45,8 @@ const Home = () => {
                         <Carusel items={loadedDishes} cardType={CardItemType.DISH} />
                     )}
                 </div>
+
+                <MeaningOfIcons />
                 <ChefOfTheWeek />
             </div>
             <AboutUs />
